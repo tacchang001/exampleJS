@@ -1,0 +1,2 @@
+# exampleJS
+JavaScriptのサンプルコード
