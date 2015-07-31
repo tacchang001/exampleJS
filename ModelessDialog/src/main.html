@@ -1,0 +1,40 @@
+<!--
+    http://shoyu-ramen23.jugem.jp/?eid=203
+  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<SCRIPT language="JavaScript">
+    function popup_modeless(url) {
+        var newWin = window.open(
+                url,
+                'sub', // 何でもよい
+                "width=320, height=180"
+        );
+        newWin.focus();
+    }
+</SCRIPT>
+
+window.openで開いた子ウィンドウからwindow.openerプロパティを使って親ウィンドウのテキストボックスに値を設定する
+
+
+<input value="子ウィンドウを開く" type="button" onclick="popup_modeless('dialog.html')">
+
+
+<div id="title01"></div>
+<form action="" name="form01">
+    <label for="subject01">架空の入力1</label>
+    <input name="text01" readonly="readonly" id="subject01" type="text">
+</form>
+
+<form action="" name="form02">
+    <label for="subject02">架空の入力2</label>
+    <input name="text02" type="text" id="subject02">
+</form>
+
+</body>
+</html>
