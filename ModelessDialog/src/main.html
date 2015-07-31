@@ -8,13 +8,24 @@
     <title></title>
 </head>
 <body>
+<!--
+    http://www.ne.jp/asahi/hishidama/home/tech/jscript/dialog.html
+
+    普通にwindow.open()でURLを指定すると、メソッドはGETになる。
+    これをPOSTにするには（POSTにしないとフォームのinputの値が渡せない）、
+    ダミー（空っぽ）のウィンドウを先に開いてPOSTした結果を受け取るようにする。
+    window.open()に指定するターゲット名とformタグに指定するターゲット名を同一にする
+  -->
 <SCRIPT language="JavaScript">
     function popup_modeless(url) {
         var newWin = window.open(
-                url,
-                'sub', // 何でもよい
+                'about:blank',	//ダミーの移動先
+                'pop', //ターゲット名（formタグのtargetと同じ値にする）
                 "width=320, height=180"
         );
+        var f = document.form01;
+        f.action = url;
+        f.submit();
         newWin.focus();
     }
 </SCRIPT>
@@ -26,7 +37,7 @@ window.openで開いた子ウィンドウからwindow.openerプロパティを�
 
 
 <div id="title01"></div>
-<form action="" name="form01">
+<form action="" name="form01" target="pop">
     <label for="subject01">架空の入力1</label>
     <input name="text01" readonly="readonly" id="subject01" type="text">
 </form>
