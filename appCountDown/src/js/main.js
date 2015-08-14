@@ -1,9 +1,18 @@
-var newYear = new Date();
-newYear = new Date(2015, 7, 13, 19, 3, 0);
-$('#defaultCountdown').countdown({until: newYear});
+(function ($) {
+    'use strict';
 
-$('#removeCountdown').click(function () {
-    var destroy = $(this).text() === 'Remove';
-    $(this).text(destroy ? 'Re-attach' : 'Remove');
-    $('#defaultCountdown').countdown(destroy ? 'destroy' : {until: newYear});
-});
+    var program1 = new Program(1, "#upper");
+    var program2 = new Program(2, "#middle");
+    var program3 = new Program(3, "#lower");
+
+    $(function () {
+        program1.run();
+        program2.run();
+        program3.run();
+
+        console.log('DOM ready');
+    });
+
+    console.log($('title').text() + ' initialized');
+
+}(jQuery));

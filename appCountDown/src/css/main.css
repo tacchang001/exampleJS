@@ -1,0 +1,36 @@
+div.all {
+    border: 1px solid black; /* 1pxの黒の枠を付ける */
+    width: 300px; /* 横幅を300pxにする */
+    height: 155px; /* 縦幅を200pxにする */
+    position: relative; /* 相対位置指定を宣言 */
+}
+
+div.counter {
+    border: 1px solid green; /* 1pxの緑の枠を付ける */
+    width: 300px; /* 横幅を50pxにする */
+    height: 50px; /* 縦幅を50pxにする */
+}
+
+div#upper {
+    background-color: lightpink; /* 背景色を赤色にする */
+    position: absolute; /* 絶対位置指定を宣言 */
+    left: 0px; /* 左から50pxの位置に表示 */
+    top: 0px; /* 上から50pxの位置に表示 */
+    z-index: 2; /* 奥行番号を２にする */
+}
+
+div#middle {
+    background-color: lightblue; /* 背景色を青にする */
+    position: absolute; /* 絶対位置指定を宣言 */
+    left: 0px; /* 左から80pxの位置に表示 */
+    top: 50px; /* 上から80pxの位置に表示 */
+    z-index: 1; /* 奥行番号を１にする */
+}
+
+div#lower {
+    background-color: lightgreen; /* 背景色を青にする */
+    position: absolute; /* 絶対位置指定を宣言 */
+    left: 0px; /* 左から80pxの位置に表示 */
+    top: 100px; /* 上から80pxの位置に表示 */
+    z-index: 3; /* 奥行番号を１にする */
+}
