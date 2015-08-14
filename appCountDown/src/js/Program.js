@@ -16,12 +16,11 @@ var Program = (function () {
         }
     }
 
-    Program.prototype.run = function () {
+    Program.prototype.countdown = function () {
         var filename = "program" + this.getNo() + ".json";
         var now = new Date();
         var this_ = this;
         $.getJSON(filename, function (data) {
-            //Program.prototype.setData.call(this, [now, data]);
             this_.setData(now, data);
 
             var counter = new TimeCounter(this_.getEndTime());

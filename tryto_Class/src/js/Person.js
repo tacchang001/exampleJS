@@ -8,6 +8,13 @@ var Person = (function () {
         // プロパティ（メンバ変数）
         this.nickname = nickname;
 
+        this.getNicknamePrivate = function () {
+            return nickname;
+        }
+        this.setNicknamePrivate = function (newname) {
+            nickname = newname;
+        }
+
         // コンストラクタからメソッドの呼び出し
         Person.prototype.setName.call(this, nickname);
 
@@ -26,8 +33,9 @@ var Person = (function () {
     Person.prototype.getNickname = function () {
         return this.nickname;
     }
-    Person.prototype.setName = function (nickname) {
-        this.nickname = nickname;
+    Person.prototype.setName = function (nn) {
+        this.nickname = nn;
+        nickname = nn;
     }
 
     // 静的プライベートメソッド

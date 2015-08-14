@@ -6,9 +6,9 @@
     var program3 = new Program(3, "#lower");
 
     $(function () {
-        program1.run();
-        program2.run();
-        program3.run();
+        program1.countdown();
+        program2.countdown();
+        program3.countdown();
 
         console.log('DOM ready');
     });
