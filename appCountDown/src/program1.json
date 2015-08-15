@@ -2,16 +2,31 @@
   {
     "time": "00:00:00",
     "duration": 5,
-    "title": "タイトル1"
+    "title": "タイトル1",
+    "sub": -1
   },
   {
     "time": "00:00:05",
     "duration": 5,
-    "title": "タイトル2本目"
+    "title": "タイトル2本目",
+    "sub": -1
   },
   {
     "time": "00:00:10",
     "duration": 5,
-    "title": "最後のタイトル"
+    "title": "タイトル3本目",
+    "sub": -1
+  },
+  {
+    "time": "00:00:15",
+    "duration": 5,
+    "title": "タイトル4本目",
+    "sub": 3
+  },
+  {
+    "time": "00:00:20",
+    "duration": 5,
+    "title": "最後のタイトル",
+    "sub": -1
   }
 ]

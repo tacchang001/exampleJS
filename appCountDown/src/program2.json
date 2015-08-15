@@ -1,17 +1,32 @@
 [
   {
     "time": "00:00:00",
-    "duration": 7,
-    "title": "2: タイトル1"
+    "duration": 6,
+    "title": "2: タイトル1",
+    "sub": -1
   },
   {
-    "time": "00:00:07",
-    "duration": 3,
-    "title": "2: タイトル2本目"
+    "time": "00:00:06",
+    "duration": 4,
+    "title": "2: タイトル2本目",
+    "sub": -1
   },
   {
     "time": "00:00:10",
-    "duration": 10,
-    "title": "2: 最後のタイトル"
+    "duration": 5,
+    "title": "2: タイトル3本目",
+    "sub": -1
+  },
+  {
+    "time": "00:00:15",
+    "duration": 5,
+    "title": "2: タイトル4本目",
+    "sub": -1
+  },
+  {
+    "time": "00:00:20",
+    "duration": 5,
+    "title": "2: 最後のタイトル",
+    "sub": -1
   }
 ]

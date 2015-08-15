@@ -11,37 +11,32 @@ var Program = (function () {
             this.data[i] = new Object({
                 "time": Program.getOffsetTime(baseTime, json[i].time),
                 "duration": json[i].duration,
-                "title": json[i].title
+                "title": json[i].title,
+                "sub": json[i].sub
             });
+            console.log(JSON.stringify(this.data[i]));
         }
+        console.log("loaded JSON for " + this.areaName);
     }
 
-    Program.prototype.countdown = function () {
+    Program.prototype.load = function (callback) {
         var filename = "program" + this.getNo() + ".json";
-        var now = new Date();
-        var this_ = this;
-        $.getJSON(filename, function (data) {
-            this_.setData(now, data);
+        $.getJSON(filename, callback);
 
-            var counter = new TimeCounter(this_.getEndTime());
-            counter.start(onTimeout, 1000);
+    }
 
-            function onTimeout() {
+    Program.prototype.getRemainString = function (now) {
+        var remain = this.getRemainSeconds(now);
+        var a_day = 24 * 60 * 60 * 1000;
+        var d = Math.round(remain / a_day);
+        var h = Math.round((remain % a_day) / (60 * 60 * 1000));
+        var m = Math.round((remain % a_day) / (60 * 1000)) % 60;
+        var s = Math.round((remain % a_day) / 1000) % 60 % 60;
+        return toDoubleDigits(h) + ":" + toDoubleDigits(m) + ":" + toDoubleDigits(s);
+    }
 
-                if (counter.getRemainSeconds() <= 1) {
-                    counter.stop();
-                    if (this_.getProgramsCount() > 1) {
-                        this_.deleteFirst();
-                        counter.setTargetTime(this_.getEndTime());
-                        counter.start(onTimeout, 1000);
-                    }
-                }
-
-                console.log(counter.getRemainString());
-                $(this_.areaName).text(counter.getRemainString() + " " + this_.getTitle());
-            }
-        });
-
+    Program.prototype.getRemainSeconds = function (now) {
+        return this.getEndTime().getTime() - now.getTime();
     }
 
     Program.prototype.deleteFirst = function () {
@@ -79,12 +74,33 @@ var Program = (function () {
         return this.data[0].title;
     }
 
+    Program.prototype.isParallel = function () {
+        if (this.data.length <= 0) throw new Error("プログラムはありません");
+
+        return (this.data[0].sub === 3);
+    }
+
     Program.prototype.printData = function () {
         console.log(this.data);
     }
 
     Program.prototype.getNo = function () {
         return this.no;
+    }
+
+    function toDoubleDigits(num) {
+        var ret;
+        if (isNaN(num)) return "00";
+        if (num < 0) {
+            num *= -1;
+        }
+        if (num < 10) {
+            ret = "0" + num;
+        }
+        else {
+            ret = num;
+        }
+        return ret;
     }
 
     return Program;
