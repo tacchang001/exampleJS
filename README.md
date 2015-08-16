@@ -31,3 +31,8 @@ WebSocketの例。サーバ側はC言語で作成。libwebsocketsライブラリ
 ## tryto_MoveDiv
 
 1秒毎にdivタグ領域を移動させる。
+
+## tryto_PrivateMethod
+
+private変数の設け方について勘違いがあったので整理しなおした。
+守ろうとしている変数が、コンストラクタ関数の引数なのか、コンストラクタ関数内で定義された変数なのか、thisに定義した変数なのかによる。
