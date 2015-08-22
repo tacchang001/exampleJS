@@ -6,20 +6,19 @@
       2,
       "unix"
     ],
-    "no-multi-spaces": 2,
     // 複数の連続した空白
-    "curly": 2,
+    "no-multi-spaces": 2,
     // 中括弧なしの制御構文
-    "comma-dangle": 2,
+    "curly": 2,
     // 不必要なカンマ
-    "valid-jsdoc": 0,
+    "comma-dangle": 2,
     // JSDocのバリデーション
-    "vars-on-top": 2,
+    "valid-jsdoc": 0,
     // varはスコープの先頭
-    "brace-style": 2,
+    "vars-on-top": 2,
     // 中括弧の前後の改行スタイルは統一
+    "brace-style": 2,
     "block-scoped-var": 2,
-    //
     "default-case": 2,
     "no-div-regex": 2,
     "no-else-return": 2,
@@ -139,7 +138,7 @@
     ],
     "func-names": 0,
     "key-spacing": [
-      1,
+      0,
       {
         "align": "value",
         "beforeColon": false,
@@ -184,8 +183,39 @@
       1,
       "always"
     ],
-    "no-underscore-dangle": 2
+    "dot-location": [
+      1,
+      "property"
+    ],
+    "no-unneeded-ternary": 1,
+    "lines-around-comment": [
+      1,
+      {
+        "beforeBlockComment": false,
+        "afterBlockComment": false,
+        "beforeLineComment": true,
+        "afterLineComment": false,
+        "allowBlockStart": true
+      }
+    ],
+    // "prefer-const": 2, // ES6
+    "spaced-comment": [
+      0,
+      "always"
+    ],
+    "no-unexpected-multiline": 1,
+    // "constructor-super,": 1, // ES6
+    // "no-this-before-super": 1, // ES6
+    "callback-return": [
+      1,
+      [
+        "callback",
+        "cb",
+        "next"
+      ]
+    ],
     // アンダースコアで始まるまたは終わる変数やプロパティーへアクセス
+    "no-underscore-dangle": 0
   },
   "env": {
     "browser": true

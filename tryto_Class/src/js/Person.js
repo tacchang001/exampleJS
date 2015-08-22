@@ -1,5 +1,5 @@
-/*eslint no-console: 0 */
-(function () {
+/* eslint no-console: 0 */
+var Person = (function () {
     "use strict";
 
     // 静的プライベートメンバ
