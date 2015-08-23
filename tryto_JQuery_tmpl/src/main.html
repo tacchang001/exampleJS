@@ -1,0 +1,32 @@
+<!--
+    http://d.hatena.ne.jp/bsheep/20110326/1301122903
+    http://qiita.com/hitonari45/items/44b2f985e6e30db4f0df
+  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="main"></div>
+
+<script id="tmpl_info" type="text/x-jquery-tmpl">
+    <div class="person">
+        <div class="name">${name}<!-- WebStorm: syntax highlight error(begin) --></div>
+        <div class="place">${place}</div>
+    </div>
+<!-- WebStorm: syntax highlight error(end) -->
+
+
+</script>
+
+<script type="application/javascript" src="vendor/jquery-1.8.3.js"></script>
+<script type="application/javascript" src="//ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.js"></script>
+<script type="text/javascript">
+    $('#tmpl_info').tmpl({name: 'bsheep', place: 'tokyo'}).appendTo('#main');
+</script>
+
+<script type="application/javascript" src="js/main.js"></script>
+</body>
+</html>
